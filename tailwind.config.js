@@ -13,6 +13,7 @@ export default {
       main1: "#53B8BB",
       main2: "#055052",
       main3: "#003638",
+      button: "#F3F2C9",
       text1: "#fafafa",
       logoQ: "#FF0000",
     },

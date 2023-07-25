@@ -5,29 +5,37 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-main1 font-main">
-        <header className="flex items-center justify-between drop-shadow-lg h-12 px-4 bg-main1 font-logo">
+        <header className="flex items-center justify-center drop-shadow-lg h-12 px-4 bg-main1 font-logo">
           <div>
             <p className="text-text1 text-2xl">
               <span className="text-logoQ font-bold">Q</span>uoterr
             </p>
           </div>
-          <div>Toggler</div>
         </header>
-        <div className="flex flex-col items-center min-h-48 justify-center">
+        <div className="flex flex-col items-center min-h-48 justify-center p-2">
           <p className="text-xl">
             Welcome to <span className="font-logo">Quoterr</span>
           </p>
           <p className="text-center text-base">
-            Here Inspiration Awaits! Discover a world of wisdom, inspiration,
-            and thought-provoking quotes. Whether you seek motivation, guidance,
-            or a moment of reflection, Quoterr has you covered. Explore our vast
-            collection of quotes from renowned authors, thinkers, and
-            visionaries. Let the words of wisdom inspire and uplift you. Get
-            ready to embark on a journey of enlightenment and empowerment. Start
-            your day with a dash of inspiration - Quoterr awaits!
+            Discover a world of wisdom, inspiration, and thought-provoking
+            quotes.
           </p>
+          <div className="flex w-3/4 mt-2">
+            <input
+              type="text"
+              name="search"
+              placeholder="Search category"
+              className="w-3/4 h-10 pl-2 bg-main2 rounded-md mr-2 text-text1"
+            />
+            <button className="rounded-md w-1/4 bg-button hover:bg-opacity-70">
+              Search
+            </button>
+          </div>
         </div>
-        <Card />
+        <div className="min-h-[75vh] border mt-2">
+          <div className="flex justify-center h-12  border"></div>
+          <Card />
+        </div>
       </div>
     </>
   );
