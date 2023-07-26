@@ -31,9 +31,13 @@ function App() {
               Search
             </button>
           </div>
+          <div className="flex w-3/4">
+            <button className="w-full h-10 rounded-md my-2 bg-button hover:bg-opacity-30">
+              Popular categories
+            </button>
+          </div>
         </div>
-        <div className="min-h-[75vh] border mt-2">
-          <div className="flex justify-center h-12  border"></div>
+        <div className="min-h-[75vh] grid grid-cols-1 gap-4 m-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
           <Card />
         </div>
       </div>
