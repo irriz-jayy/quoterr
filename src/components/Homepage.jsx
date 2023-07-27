@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Card from "./Card";
 import { useState } from "react";
-
+import { fetchQuotes } from "../api/api";
 function Homepage() {
   const [search, setSearch] = useState("");
+  const [quotes, setQuotes] = useState([]);
 
   const handleSearch = () => {
     console.log({ search });
   };
+
+  useEffect(() => {
+    // Fetch quotes when the component mounts
+    fetchQuotes(10)
+      .then((response) => {
+        // Update the quotes state with the fetched data
+        setQuotes(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        // Handle any errors if needed
+        console.error("Error fetching quotes:", error);
+      });
+  }, []);
   return (
     <div className="min-h-screen bg-main1 font-main">
       <header className="flex items-center justify-center drop-shadow-lg h-12 px-4 bg-main1 font-logo">
@@ -50,7 +65,7 @@ function Homepage() {
         </div>
       </div>
       <div className="grid grid-cols-1 gap-4 m-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
-        <Card />
+        <Card quotes={quotes} />
       </div>
     </div>
   );
