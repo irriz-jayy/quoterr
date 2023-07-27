@@ -1,10 +1,12 @@
 import React from "react";
 import Card from "./Card";
-import { unstable_HistoryRouter } from "react-router-dom";
+import { useState } from "react";
 
 function Homepage() {
+  const [search, setSearch] = useState("");
+
   const handleSearch = () => {
-    alert("searched");
+    console.log({ search });
   };
   return (
     <div className="min-h-screen bg-main1 font-main">
@@ -26,6 +28,8 @@ function Homepage() {
           <input
             type="text"
             name="search"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
             placeholder="Search category"
             className="w-3/4 h-10 pl-2 bg-main2 rounded-md mr-2 text-text1"
           />
