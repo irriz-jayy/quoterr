@@ -1,7 +1,11 @@
 import React from "react";
 import Card from "./Card";
+import { unstable_HistoryRouter } from "react-router-dom";
 
 function Homepage() {
+  const handleSearch = () => {
+    alert("searched");
+  };
   return (
     <div className="min-h-screen bg-main1 font-main">
       <header className="flex items-center justify-center drop-shadow-lg h-12 px-4 bg-main1 font-logo">
@@ -25,17 +29,23 @@ function Homepage() {
             placeholder="Search category"
             className="w-3/4 h-10 pl-2 bg-main2 rounded-md mr-2 text-text1"
           />
-          <button className="rounded-md w-1/4 bg-button hover:bg-opacity-70">
+          <button
+            onClick={handleSearch}
+            className="rounded-md w-1/4 bg-button hover:bg-opacity-70"
+          >
             Search
           </button>
         </div>
         <div className="flex w-3/4">
-          <button className="w-full h-10 rounded-md my-2 bg-button hover:bg-opacity-30">
+          <a
+            href="/categories"
+            className="flex items-center justify-center cursor-pointer w-full h-10 rounded-md my-2 bg-button hover:bg-opacity-30"
+          >
             Popular categories
-          </button>
+          </a>
         </div>
       </div>
-      <div className="min-h-[75vh] grid grid-cols-1 gap-4 m-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 m-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
         <Card />
       </div>
     </div>
